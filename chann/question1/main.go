@@ -9,7 +9,7 @@ var wg = sync.WaitGroup{}
 
 func sender(ch chan<- int) {
 	defer wg.Done()
-	for i := 0; i < 10; i++ {
+	for i := range 10 {
 		ch <- i + 1
 		fmt.Println("Sent:", i+1)
 	}
